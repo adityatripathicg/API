@@ -44,3 +44,15 @@ btn.addEventListener("click", async()=>{
 })
 
 //dog Image
+async function dog(){
+    let dog = await axios.get(url2);
+    return dog.data.message;
+}
+let btn2 = document.querySelector("#dogbtn");
+let img = document.querySelector("#dogimg");
+btn2.addEventListener("click",async ()=>{
+    let link = await dog();
+    img.src = link;
+})
+
+
