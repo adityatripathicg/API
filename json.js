@@ -55,4 +55,18 @@ btn2.addEventListener("click",async ()=>{
     img.src = link;
 })
 
+//get a joke and sending header using axios
+async function getjokes(){
+    const config = { headers:{ Accept: "application/json"}};
+    let res = await axios.get(url3,config);
+    return res.data.joke;
+}
+let url3 = "https://icanhazdadjoke.com/";
+let btn3 = document.querySelector("#dadbtn");
+let p2 = document.querySelector("#joke");
+btn3.addEventListener("click",async ()=>{
+    let joke = await getjokes();
+    p2.innerText = joke;
+})
+
 
