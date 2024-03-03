@@ -13,4 +13,5 @@ async function inp(){
     let state = input.value;
     console.log(state);
     return datas.data.state-province;
+    
 }
